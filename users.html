@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="./js/uTable.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Document</title>
+</head>
+<body class="bg-light">
+    <section id="sign-in">
+        <div class="">
+            <h1 class="text-center p-4">
+                Users
+            </h1>
+        </div>
+    
+        <div class="container" id="myListUser">
+        
+        </div> 
+		<div class="position-absolute bottom-0 start-0">
+            <a href="./inicio.html">
+                <button type="button" class="btn btn-outline-danger p-3 fixed-bottom">
+                    Back to home
+                </button>
+            </a>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-success p-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                New User
+            </button>
+        </div>
+    
+        <!-- <a href="./uRegister.html" class="btn-flotante">
+			New user
+		</a> -->
+        <script type="text/javascript"> 
+            window.onload = getUser();
+        </script>
+    </section> 
+	<hr class="py-1">
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="register(event)">
+                        <div class="mb-3 form-group">
+                            <label for="recipient-name" class="col-form-label">Id:</label>
+                            <input type="number" class="form-control" id="uId" maxlength="80">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="recipient-name" class="col-form-label">Identification:</label>
+                            <input type="number" class="form-control" id="uIdentification" maxlength="80">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="recipient-name" class="col-form-label">User Name:</label>
+                            <input type="text" class="form-control" id="uName" maxlength="80">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="recipient-name" class="col-form-label">Address:</label>
+                            <input type="text" class="form-control" id="uAddress" maxlength="80">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="recipient-name" class="col-form-label">Cell Phone:</label>
+                            <input type="number" class="form-control" id="uCellPhone" maxlength="80">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="message-text" class="col-form-label">Email</label>
+                            <input type="email" class="form-control" id="uEmail" maxlength="50">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="message-text" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="uPassword" maxlength="50">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="message-text" class="col-form-label">Confirm password:</label>
+                            <input type="password" class="form-control" id="uPasswordCon" maxlength="50">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="message-text" class="col-form-label">Zone:</label>
+                            <input type="text" class="form-control" id="uZone" maxlength="50">
+                        </div>
+                        <!-- <div class="mb-3 form-group">
+                            <label for="message-text" class="col-form-label">Type</label>
+                            
+                        </div> -->
+                        <div class="mb-3 form-group">
+                            <label for="message-text" class="col-form-label">Type</label>
+                            <select id="uType" class="form-select">
+                                <option selected value="">Select the user type</option> 
+                                <option value="COORD">Zone coordinator</option>
+                                <option value="ASE">Commercial advisor</option>
+                                <option value="ADM">Administrator</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button id="submitRegister" type="submit" class="form-control btn btn-primary rounded submit px-3">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="js/jquery.min.js"></script> -->
+	<script src="js/funcionesAdicionales.js"></script>
+	<script src="js/peticiones.js"></script>
+	<script src="js/CRUD.js"></script>
+	<script src="./js/uRegister.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
